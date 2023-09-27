@@ -1,0 +1,10 @@
+cd ~/evolution-api/
+pm2 flush
+pm2 stop ApiEvolution
+git reset --hard HEAD
+git pull
+git checkout main
+rm -rf node_modules
+npm i
+pm2 start ApiEvolution
+pm2 log ApiEvolution
